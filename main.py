@@ -20,7 +20,7 @@ def main(screen):
 
         screen.erase()
 
-        apple.position_apple(screen)
+        apple.position_apple(screen, cordinates)
 
         head_last_spot = (snake.row,snake.column)
 
