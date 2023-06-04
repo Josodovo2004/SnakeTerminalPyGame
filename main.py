@@ -35,7 +35,7 @@ def main(screen):
         for n in range(0,len(body)):
             screen.addstr(cordinates[n][0],cordinates[n][1],body[n])
 
-        curses.napms(200) #time in miliseconds
+        curses.napms(100) #time in miliseconds
 
         if key == ord('q'):
             break
