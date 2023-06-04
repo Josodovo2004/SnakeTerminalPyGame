@@ -14,7 +14,3 @@ class Apple:
     
     def position_apple(self, screen):
         screen.addstr(self.row, self.column, self.icon)
-
-if __name__ == "__main__":
-    for a in range(1, 100):
-        print(a)
