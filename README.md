@@ -5,4 +5,4 @@ In order to execute put in the terminal
 
 '''sh
 python3 main.py
-'''sh
+'''
