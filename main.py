@@ -46,7 +46,7 @@ def main(screen):
         if apple.row == snake.row and apple.column == snake.column:
             points += 1
             apple.rand_position()
-            apple.position_apple(screen)
+            apple.position_apple(screen, cordinates)
 
         screen.addstr(20,0, "---------------------------------------------")
         screen.addstr(20, 45, f"POINTS : {points}")
