@@ -1,7 +1,7 @@
 # SnakeTerminalPyGame
-A simple game to be launched in a simple terminal using python library of curses
+A simple game to be launched in the terminal. Made using python "curses" library.
 
-In order to execute put in the terminal
+In order to execute write in the terminal.
 
 ```sh
 python3 main.py
