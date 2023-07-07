@@ -2,6 +2,8 @@ import curses
 import snake
 import apple
 
+with open("highscore.txt", "r") as file:
+    highscore = file.readline()
 screen = curses.initscr()
 snake = snake.Snake('#','o', 20, 10)
 apple = apple.Apple("@")
@@ -42,7 +44,14 @@ def main(screen):
 
         if (snake.row, snake.column) in cordinates:
             screen.erase()
-            screen.addstr(0, 0, "Game Over :c")
+            screen.addstr(10, 40, "Game Over :c")
+            screen.addstr(12, 30, f"Your score: {points}")
+            screen.addstr(12, 50, f"Last high score: {highscore}")
+            if points > int(highscore):
+                with open("highscore.txt", "w") as file:
+                    file.write(str(points))
+                screen.addstr(14, 28, "Congratulations, that is a new high score!!")
+            screen.refresh()
             curses.napms(2000)
             break
 
@@ -51,8 +60,10 @@ def main(screen):
             apple.rand_position()
             apple.position_apple(screen, cordinates)
 
-        screen.addstr(20,0, "---------------------------------------------")
-        screen.addstr(20, 45, f"POINTS : {points}")
+        for i in range(0,20):
+            screen.addstr(i,80,"|")
+        screen.addstr(20,0, f"--------------- HIGH SCORE: {highscore} -------------")
+        screen.addstr(20, 45, f"SCORE : {points}")
         screen.addstr(20,56, "------------------------")
 
         screen.refresh()
