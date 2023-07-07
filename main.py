@@ -41,6 +41,9 @@ def main(screen):
             break
 
         if (snake.row, snake.column) in cordinates:
+            screen.erase()
+            screen.addstr(0, 0, "Game Over :c")
+            curses.napms(2000)
             break
 
         if apple.row == snake.row and apple.column == snake.column:
